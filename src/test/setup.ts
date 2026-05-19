@@ -2,7 +2,7 @@ import { afterEach } from 'vitest'
 import { GlobalWindow } from 'happy-dom'
 
 const window = new GlobalWindow()
-const globalObject = globalThis as any
+const globalObject = globalThis as Record<string, unknown>
 const bindIfFunction = (value: unknown) =>
   typeof value === 'function' ? value.bind(window) : undefined
 
